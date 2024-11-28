@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         marginTop: 12,
     },
     buttonWrapper:{
-        backgroundColor: 'green',
+        backgroundColor: 'red',
         paddingVertical: 6,
         borderRadius: 25,
         marginTop: 20,
