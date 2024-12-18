@@ -1,0 +1,23 @@
+{
+    "post" : [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        },
+        {
+            "title": "rukun sejahtera",
+            "author": "mamad",
+            "id": 2
+        },
+    
+        {
+            "title": "React Native API call",
+            "author": "mamad ganteng",
+            "id": 3
+        }
+    ],
+    "comment": [
+        
+    ]
+}
