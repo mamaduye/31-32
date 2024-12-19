@@ -4,16 +4,18 @@ import {View, ScrollView} from 'react-native';
 // import StylingReactNativeComponent from './stylingreactnativecomponent';
 import MateriFlexBox from "./materiflexbox";
 import LocalAPI from "@/components/localAPI";
-;
+import CallAPIAxios from "./CallAPIAxios";
 
 
 
 function App() {
   return (
-    <View>
-        <LocalAPI/>
+    <ScrollView>
+      <LocalAPI />
+        <CallAPIAxios />
+
      
-    </View>
+    </ScrollView>
   );
 }
 

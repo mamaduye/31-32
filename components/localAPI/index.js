@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Button, StyleSheet, Text, View, Image, ScrollView} from 'react-native'
 import { TextInput } from 'react-native';
+import Axios from 'axios';
 
-const Item =() => {
+const Item =({name, email, bidang}) => {
     return (
         <View style={styles.itemContainer}>
-         <Image source={{uri: 'https://i.pinimg.com/736x/6e/89/fa/6e89faaffc9ff42df7167c60abf6775c.jpg'}} style={styles.avatar} />
+         <Image source={{uri: `https://i.pinimg.com/736x/6e//fa/6e89faaffc9ff42df7167c60abf6775c${email}.jpg`}} style={styles.avatar} />
                <View style={styles.desc}>
-                    <Text style={styles.descName}>Nama Lengkap</Text>
-                    <Text style={styles.descEmail}>Email</Text>
-                    <Text style={styles.descBidang}>Bidang</Text>
+                    <Text style={styles.descName}>{name}</Text>
+                    <Text style={styles.descEmail}>{email}</Text>
+                    <Text style={styles.descBidang}>{bidang}</Text>
                </View>
                <Text style={styles.delete}>X</Text>
         </View>
@@ -20,6 +21,11 @@ const LocalAPI = () => {
     const [name,setName]= useState("");
     const [email,setEmail]= useState("");
     const [bidang,setBidang]= useState("");
+    const [users, setUsers] = setGestureState([]);
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     const submit =() => {
         const data = {
@@ -27,7 +33,20 @@ const LocalAPI = () => {
             email,
             bidang,
         }
-        console.log('data sebelum dikirim: ',data);
+       Axios.post('http://127.0.0.1:3004/users', data)
+       .then(res =>{
+         console.log('res', res);
+         setName("");
+         setEmail("");
+         setBidang("");
+       })
+    }
+
+    const getData = () => {
+        Axios.get('url')
+        .then(res => {
+            console.log('res get DATA: ', res)
+        })
     }
 
     return (
@@ -40,6 +59,7 @@ const LocalAPI = () => {
                 <TextInput placeholder= "Bidang" style={styles.input} value={bidang} onChangeText={(value) => setBidang(value)} />
                 <Button title="Simpan" onPress={submit} />
                 <View style={styles.line} />
+                {user}
                 <Item />
                 <Item />
                 <Item />

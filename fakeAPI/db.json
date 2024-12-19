@@ -1,23 +1,22 @@
 {
-    "post" : [
-        {
-            "id": 1,
-            "title": "json-server",
-            "author": "typicode"
-        },
-        {
-            "title": "rukun sejahtera",
-            "author": "mamad",
-            "id": 2
-        },
-    
-        {
-            "title": "React Native API call",
-            "author": "mamad ganteng",
-            "id": 3
-        }
-    ],
-    "comment": [
-        
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "mamad",
+      "email": "Mamadkun@gmail.com",
+      "bidang": "ruqyah jin"
+    },
+    {
+      "id": "ed4e",
+      "name": "SAKA",
+      "email": "SAKA@GMAIL.COM",
+      "bidang": "PERTANIAN DAN PERKEBUNAN"
+    },
+    {
+      "id": "cc62",
+      "name": "MASREY",
+      "email": "MS@GMAIL.COM",
+      "bidang": "IT KONSULTAN"
+    }
+  ]
 }
